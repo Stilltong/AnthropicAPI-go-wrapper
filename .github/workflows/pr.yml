@@ -1,0 +1,12 @@
+name: Sanity check
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  prcheck:
+    name: Sanity check
+    runs-on: ubuntu-latest
+    steps:
+ 

@@ -4,4 +4,16 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"f
+	"fmt"
+	"net/http"
+)
+
+type Client struct {
+	config ClientConfig
+}
+
+type Response interface {
+	SetHeader(http.Header)
+}
+
+type httpHeader http.

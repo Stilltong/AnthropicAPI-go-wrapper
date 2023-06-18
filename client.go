@@ -27,4 +27,10 @@ func (h *httpHeader) Header() http.Header {
 }
 
 // NewClient create new Anthropic API client
-func NewClient(apikey string, opts ...ClientOption) *Client
+func NewClient(apikey string, opts ...ClientOption) *Client {
+	return &Client{
+		config: newConfig(apikey, opts...),
+	}
+}
+
+func (c *Client) sendRequest(req *http.Request, v Response) error {

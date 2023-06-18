@@ -34,3 +34,12 @@ func NewClient(apikey string, opts ...ClientOption) *Client {
 }
 
 func (c *Client) sendRequest(req *http.Request, v Response) error {
+	res, err := c.config.HTTPClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer res.Body.Close()
+
+	v.SetHeader(res.Header)
+
+	if err :=

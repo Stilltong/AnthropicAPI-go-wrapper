@@ -23,4 +23,8 @@ func (h *httpHeader) SetHeader(header http.Header) {
 }
 
 func (h *httpHeader) Header() http.Header {
-	return 
+	return http.Header(*h)
+}
+
+// NewClient create new Anthropic API client
+func NewClient(apikey string, opts ...ClientOption) *Client

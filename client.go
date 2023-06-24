@@ -42,4 +42,9 @@ func (c *Client) sendRequest(req *http.Request, v Response) error {
 
 	v.SetHeader(res.Header)
 
-	if err :=
+	if err := c.handlerRequestError(res); err != nil {
+		return err
+	}
+
+	if err = json.NewDecoder(res.Body).Decode(v); err != nil {
+		return e

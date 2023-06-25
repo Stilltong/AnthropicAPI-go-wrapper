@@ -47,4 +47,11 @@ func (c *Client) sendRequest(req *http.Request, v Response) error {
 	}
 
 	if err = json.NewDecoder(res.Body).Decode(v); err != nil {
-		return e
+		return err
+	}
+
+	return nil
+}
+
+func (c *Client) handlerRequestError(resp *http.Response) error {
+	if resp.StatusCode < http.StatusOK ||

@@ -54,4 +54,7 @@ func (c *Client) sendRequest(req *http.Request, v Response) error {
 }
 
 func (c *Client) handlerRequestError(resp *http.Response) error {
-	if resp.StatusCode < http.StatusOK ||
+	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusBadRequest {
+		var errRes ErrorResponse
+		err := json.NewDecoder(resp.Body).Decode(&errRes)
+		if err != nil || 

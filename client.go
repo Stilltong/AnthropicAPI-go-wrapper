@@ -64,4 +64,9 @@ func (c *Client) handlerRequestError(resp *http.Response) error {
 			}
 			return &reqErr
 		}
-		return fmt
+		return fmt.Errorf("error, status code: %d, message: %w", resp.StatusCode, errRes.Error)
+	}
+	return nil
+}
+
+func (c *Client) fullURL(suffix s

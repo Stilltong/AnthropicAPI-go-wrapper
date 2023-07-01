@@ -77,4 +77,8 @@ type requestSetter func(req *http.Request)
 
 func withBetaVersion(version string) requestSetter {
 	return func(req *http.Request) {
-		req.Header.Set("anthropic
+		req.Header.Set("anthropic-beta", version)
+	}
+}
+
+func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body any, requestSetters ...requestSetter) (req

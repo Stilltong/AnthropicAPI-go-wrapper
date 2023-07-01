@@ -81,4 +81,9 @@ func withBetaVersion(version string) requestSetter {
 	}
 }
 
-func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body any, requestSetters ...requestSetter) (req
+func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body any, requestSetters ...requestSetter) (req *http.Request, err error) {
+	var reqBody []byte
+	if body != nil {
+		reqBody, err = json.Marshal(body)
+		if err != nil {
+			return nil, err

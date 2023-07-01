@@ -75,4 +75,6 @@ func (c *Client) fullURL(suffix string) string {
 
 type requestSetter func(req *http.Request)
 
-func
+func withBetaVersion(version string) requestSetter {
+	return func(req *http.Request) {
+		req.Header.Set("anthropic

@@ -69,4 +69,10 @@ func (c *Client) handlerRequestError(resp *http.Response) error {
 	return nil
 }
 
-func (c *Client) fullURL(suffix s
+func (c *Client) fullURL(suffix string) string {
+	return fmt.Sprintf("%s%s", c.config.BaseURL, suffix)
+}
+
+type requestSetter func(req *http.Request)
+
+func

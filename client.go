@@ -87,3 +87,8 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 		reqBody, err = json.Marshal(body)
 		if err != nil {
 			return nil, err
+		}
+	}
+
+	req, err = http.NewRequestWithContext(ctx, method, c.fullURL(urlSuffix), bytes.NewBuffer(reqBody))
+	if err

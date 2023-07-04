@@ -91,4 +91,9 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 	}
 
 	req, err = http.NewRequestWithContext(ctx, method, c.fullURL(urlSuffix), bytes.NewBuffer(reqBody))
-	if err
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", "application/json; charset=utf-8")
+	req.Header.Set("Accept", "applic

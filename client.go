@@ -96,4 +96,8 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 	}
 
 	req.Header.Set("Content-Type", "application/json; charset=utf-8")
-	req.Header.Set("Accept", "applic
+	req.Header.Set("Accept", "application/json; charset=utf-8")
+	req.Header.Set("X-Api-Key", c.config.apikey)
+	req.Header.Set("Anthropic-Version", c.config.APIVersion)
+
+	for _, se

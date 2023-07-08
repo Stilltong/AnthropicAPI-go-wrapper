@@ -107,4 +107,6 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 	return req, nil
 }
 
-func (c *Client) newStreamRequest(ctx context.Context, method, urlSuff
+func (c *Client) newStreamRequest(ctx context.Context, method, urlSuffix string, body any, requestSetters ...requestSetter) (req *http.Request,
+	err error) {
+	req, err = c.newRequest(ctx, method, urlSu

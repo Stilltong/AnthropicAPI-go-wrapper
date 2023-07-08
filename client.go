@@ -100,4 +100,11 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 	req.Header.Set("X-Api-Key", c.config.apikey)
 	req.Header.Set("Anthropic-Version", c.config.APIVersion)
 
-	for _, se
+	for _, setter := range requestSetters {
+		setter(req)
+	}
+
+	return req, nil
+}
+
+func (c *Client) newStreamRequest(ctx context.Context, method, urlSuff

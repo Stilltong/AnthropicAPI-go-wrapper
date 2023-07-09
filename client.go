@@ -109,4 +109,10 @@ func (c *Client) newRequest(ctx context.Context, method, urlSuffix string, body 
 
 func (c *Client) newStreamRequest(ctx context.Context, method, urlSuffix string, body any, requestSetters ...requestSetter) (req *http.Request,
 	err error) {
-	req, err = c.newRequest(ctx, method, urlSu
+	req, err = c.newRequest(ctx, method, urlSuffix, body, requestSetters...)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Accept", "text/event-stream")
+	req.Header

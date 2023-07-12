@@ -115,4 +115,8 @@ func (c *Client) newStreamRequest(ctx context.Context, method, urlSuffix string,
 	}
 
 	req.Header.Set("Accept", "text/event-stream")
-	req.Header
+	req.Header.Set("Cache-Control", "no-cache")
+	req.Header.Set("Connection", "keep-alive")
+
+	return req, nil
+}

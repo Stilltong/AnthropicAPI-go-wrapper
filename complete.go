@@ -7,4 +7,7 @@ import (
 
 type CompleteRequest struct {
 	Model             string `json:"model"`
-	Prompt           
+	Prompt            string `json:"prompt"`
+	MaxTokensToSample int    `json:"max_tokens_to_sample"`
+
+	StopSequences []string       `json:"

@@ -10,4 +10,6 @@ type CompleteRequest struct {
 	Prompt            string `json:"prompt"`
 	MaxTokensToSample int    `json:"max_tokens_to_sample"`
 
-	StopSequences []string       `json:"
+	StopSequences []string       `json:"stop_sequences,omitempty"`
+	Temperature   *float32       `json:"temperature,omitempty"`
+	TopP          *float32       `json:"top_p,

@@ -12,4 +12,7 @@ type CompleteRequest struct {
 
 	StopSequences []string       `json:"stop_sequences,omitempty"`
 	Temperature   *float32       `json:"temperature,omitempty"`
-	TopP          *float32       `json:"top_p,
+	TopP          *float32       `json:"top_p,omitempty"`
+	TopK          *int           `json:"top_k,omitempty"`
+	MetaData      map[string]any `json:"meta_data,omitempty"`
+	Stream

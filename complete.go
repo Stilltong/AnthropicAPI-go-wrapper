@@ -15,4 +15,11 @@ type CompleteRequest struct {
 	TopP          *float32       `json:"top_p,omitempty"`
 	TopK          *int           `json:"top_k,omitempty"`
 	MetaData      map[string]any `json:"meta_data,omitempty"`
-	Stream
+	Stream        bool           `json:"stream,omitempty"`
+}
+
+func (c *CompleteRequest) SetTemperature(t float32) {
+	c.Temperature = &t
+}
+
+func 

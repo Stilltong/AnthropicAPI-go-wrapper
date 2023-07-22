@@ -22,4 +22,12 @@ func (c *CompleteRequest) SetTemperature(t float32) {
 	c.Temperature = &t
 }
 
-func 
+func (c *CompleteRequest) SetTopP(p float32) {
+	c.TopP = &p
+}
+
+func (c *CompleteRequest) SetTopK(k int) {
+	c.TopK = &k
+}
+
+type Comple

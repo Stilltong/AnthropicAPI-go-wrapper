@@ -39,3 +39,7 @@ type CompleteResponse struct {
 	// possible values are: stop_sequence、max_tokens、null
 	StopReason string `json:"stop_reason"`
 	Model      string `json:"model"`
+}
+
+func (c *Client) CreateComplete(ctx context.Context, request CompleteRequest) (response CompleteResponse, err error) {
+	request.Stream = 

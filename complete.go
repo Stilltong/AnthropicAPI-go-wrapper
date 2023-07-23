@@ -36,4 +36,6 @@ type CompleteResponse struct {
 	Type       string `json:"type"`
 	ID         string `json:"id"`
 	Completion string `json:"completion"`
-	// possible 
+	// possible values are: stop_sequence、max_tokens、null
+	StopReason string `json:"stop_reason"`
+	Model      string `json:"model"`

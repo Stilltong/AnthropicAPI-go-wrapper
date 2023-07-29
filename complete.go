@@ -46,4 +46,10 @@ func (c *Client) CreateComplete(ctx context.Context, request CompleteRequest) (r
 
 	urlSuffix := "/complete"
 	req, err := c.newRequest(ctx, http.MethodPost, urlSuffix, request)
-	if err != n
+	if err != nil {
+		return
+	}
+
+	err = c.sendRequest(req, &response)
+	return
+}

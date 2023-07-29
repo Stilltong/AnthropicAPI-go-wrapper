@@ -65,3 +65,59 @@ func (c *Client) CreateCompleteStream(ctx context.Context, request CompleteStrea
 			}
 			return response, readErr
 		}
+
+		noSpaceLine := bytes.TrimSpace(rawLine)
+		if len(noSpaceLine) == 0 {
+			continue
+		}
+		if bytes.HasPrefix(noSpaceLine, eventPrefix) {
+			event = bytes.TrimSpace(bytes.TrimPrefix(noSpaceLine, eventPrefix))
+			continue
+		}
+		if bytes.HasPrefix(noSpaceLine, dataPrefix) {
+			var (
+				data      = bytes.TrimPrefix(noSpaceLine, dataPrefix)
+				eventType = CompleteEvent(event)
+			)
+			switch eventType {
+			case CompleteEventError:
+				var d ErrorResponse
+				if err := json.Unmarshal(data, &d); err != nil {
+					return response, err
+				}
+				if request.OnError != nil {
+					request.OnError(d)
+				}
+				return response, d.Error
+			case CompleteEventPing:
+				var d CompleteStreamPingData
+				if err := json.Unmarshal(data, &d); err != nil {
+					return response, err
+				}
+				if request.OnPing != nil {
+					request.OnPing(d)
+				}
+				continue
+			case CompleteEventCompletion:
+				var d CompleteResponse
+				if err := json.Unmarshal(data, &d); err != nil {
+					return response, err
+				}
+				if request.OnCompletion != nil {
+					request.OnCompletion(d)
+				}
+				response.Type = d.Type
+				response.ID = d.ID
+				response.StopReason = d.StopReason
+				response.Model = d.Model
+				response.Completion += d.Completion
+				continue
+			}
+		}
+		emptyMessageCount++
+		if emptyMessageCount > c.config.EmptyMessagesLimit {
+			return response, ErrTooManyEmptyStreamMessages
+		}
+	}
+	return
+}

@@ -6,4 +6,11 @@ import (
 	"io"
 	"net/http"
 	"strconv"
-	"testin
+	"testing"
+	"time"
+
+	"github.com/liushuangls/go-anthropic/v2"
+	"github.com/liushuangls/go-anthropic/v2/internal/test"
+)
+
+func TestComple

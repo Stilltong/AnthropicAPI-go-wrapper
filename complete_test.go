@@ -13,4 +13,8 @@ import (
 	"github.com/liushuangls/go-anthropic/v2/internal/test"
 )
 
-func TestComple
+func TestComplete(t *testing.T) {
+	server := test.NewTestServer()
+	server.RegisterHandler("/v1/complete", handleCompleteEndpoint)
+
+	ts := server.A

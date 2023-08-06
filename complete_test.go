@@ -17,4 +17,9 @@ func TestComplete(t *testing.T) {
 	server := test.NewTestServer()
 	server.RegisterHandler("/v1/complete", handleCompleteEndpoint)
 
-	ts := server.A
+	ts := server.AnthropicTestServer()
+	ts.Start()
+	defer ts.Close()
+
+	baseUrl := ts.URL + "/v1"
+	client := anthropic.NewClient(test.GetTestToken(), a

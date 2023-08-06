@@ -22,4 +22,6 @@ func TestComplete(t *testing.T) {
 	defer ts.Close()
 
 	baseUrl := ts.URL + "/v1"
-	client := anthropic.NewClient(test.GetTestToken(), a
+	client := anthropic.NewClient(test.GetTestToken(), anthropic.WithBaseURL(baseUrl))
+	resp, err := client.CreateComplete(context.Background(), anthropic.CompleteRequest{
+		Model:             anthropic.ModelClaudeInst

@@ -24,4 +24,9 @@ func TestComplete(t *testing.T) {
 	baseUrl := ts.URL + "/v1"
 	client := anthropic.NewClient(test.GetTestToken(), anthropic.WithBaseURL(baseUrl))
 	resp, err := client.CreateComplete(context.Background(), anthropic.CompleteRequest{
-		Model:             anthropic.ModelClaudeInst
+		Model:             anthropic.ModelClaudeInstant1Dot2,
+		Prompt:            "\n\nHuman: What is your name?\n\nAssistant:",
+		MaxTokensToSample: 1000,
+	})
+	if err != nil {
+		t.Fatalf("C

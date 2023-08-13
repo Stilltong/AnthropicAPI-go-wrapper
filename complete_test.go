@@ -29,4 +29,10 @@ func TestComplete(t *testing.T) {
 		MaxTokensToSample: 1000,
 	})
 	if err != nil {
-		t.Fatalf("C
+		t.Fatalf("CreateComplete error: %v", err)
+	}
+
+	t.Logf("Create Complete resp: %+v", resp)
+}
+
+func handleCompleteEndpoint(w http.ResponseWriter, r *htt

@@ -45,4 +45,9 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var completeReq anthropic.CompleteRequest
-	if completeReq, err = getCom
+	if completeReq, err = getCompleteRequest(r); err != nil {
+		http.Error(w, "could not read request", http.StatusInternalServerError)
+		return
+	}
+
+	res 

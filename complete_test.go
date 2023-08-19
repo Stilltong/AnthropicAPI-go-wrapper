@@ -35,4 +35,10 @@ func TestComplete(t *testing.T) {
 	t.Logf("Create Complete resp: %+v", resp)
 }
 
-func handleCompleteEndpoint(w http.ResponseWriter, r *htt
+func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
+	var err error
+	var resBytes []byte
+
+	// completions only accepts POST requests
+	if r.Method != "POST" {
+		http.Error

@@ -41,4 +41,8 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 
 	// completions only accepts POST requests
 	if r.Method != "POST" {
-		http.Error
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	}
+
+	var completeReq anthropic.CompleteRequest
+	if completeReq, err = getCom

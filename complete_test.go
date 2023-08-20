@@ -50,4 +50,7 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res 
+	res := anthropic.CompleteResponse{
+		Type:       "completion",
+		ID:         strconv.Itoa(int(time.Now().Unix())),
+		Completi

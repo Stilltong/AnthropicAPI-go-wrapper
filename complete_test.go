@@ -53,4 +53,11 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 	res := anthropic.CompleteResponse{
 		Type:       "completion",
 		ID:         strconv.Itoa(int(time.Now().Unix())),
-		Completi
+		Completion: "hello",
+		Model:      completeReq.Model,
+	}
+	resBytes, _ = json.Marshal(res)
+	_, _ = w.Write(resBytes)
+}
+
+func getCompleteRequest(

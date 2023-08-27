@@ -60,4 +60,7 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(resBytes)
 }
 
-func getCompleteRequest(
+func getCompleteRequest(r *http.Request) (req anthropic.CompleteRequest, err error) {
+	reqBody, err := io.ReadAll(r.Body)
+	if err != nil {
+	

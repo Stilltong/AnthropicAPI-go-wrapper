@@ -63,4 +63,12 @@ func handleCompleteEndpoint(w http.ResponseWriter, r *http.Request) {
 func getCompleteRequest(r *http.Request) (req anthropic.CompleteRequest, err error) {
 	reqBody, err := io.ReadAll(r.Body)
 	if err != nil {
-	
+		return
+	}
+
+	err = json.Unmarshal(reqBody, &req)
+	if err != nil {
+		return
+	}
+	return
+}

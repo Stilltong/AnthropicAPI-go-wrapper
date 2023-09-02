@@ -50,3 +50,34 @@ func newConfig(apikey string, opts ...ClientOption) ClientConfig {
 	}
 
 	return c
+}
+
+func WithBaseURL(baseUrl string) ClientOption {
+	return func(c *ClientConfig) {
+		c.BaseURL = baseUrl
+	}
+}
+
+func WithAPIVersion(apiVersion string) ClientOption {
+	return func(c *ClientConfig) {
+		c.APIVersion = apiVersion
+	}
+}
+
+func WithHTTPClient(cli *http.Client) ClientOption {
+	return func(c *ClientConfig) {
+		c.HTTPClient = cli
+	}
+}
+
+func WithEmptyMessagesLimit(limit uint) ClientOption {
+	return func(c *ClientConfig) {
+		c.EmptyMessagesLimit = limit
+	}
+}
+
+func WithBetaVersion(betaVersion string) ClientOption {
+	return func(c *ClientConfig) {
+		c.BetaVersion = betaVersion
+	}
+}

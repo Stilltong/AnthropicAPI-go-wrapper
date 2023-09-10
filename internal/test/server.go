@@ -16,4 +16,10 @@ type ServerTest struct {
 	handlers map[string]handler
 }
 
-type handler func(w http.ResponseWriter, r *
+type handler func(w http.ResponseWriter, r *http.Request)
+
+func NewTestServer() *ServerTest {
+	return &ServerTest{handlers: make(map[string]handler)}
+}
+
+func (ts *ServerTest) RegisterHandl

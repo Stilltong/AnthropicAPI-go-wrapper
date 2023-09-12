@@ -26,4 +26,6 @@ func (ts *ServerTest) RegisterHandler(path string, handler handler) {
 	ts.handlers[path] = handler
 }
 
-// AnthropicTestServer Creates a mocked OpenAI server which can pretend to handle 
+// AnthropicTestServer Creates a mocked OpenAI server which can pretend to handle requests during testing.
+func (ts *ServerTest) AnthropicTestServer() *httptest.Server {
+	return httptest.NewUnstartedServer(http.HandlerFunc(func(w

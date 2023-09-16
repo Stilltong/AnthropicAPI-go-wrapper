@@ -28,4 +28,8 @@ func (ts *ServerTest) RegisterHandler(path string, handler handler) {
 
 // AnthropicTestServer Creates a mocked OpenAI server which can pretend to handle requests during testing.
 func (ts *ServerTest) AnthropicTestServer() *httptest.Server {
-	return httptest.NewUnstartedServer(http.HandlerFunc(func(w
+	return httptest.NewUnstartedServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("received request at path %q\n", r.URL.Path)
+
+		// check auth
+		if r.Header.Get("X-Api-Ke

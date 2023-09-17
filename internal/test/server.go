@@ -39,4 +39,9 @@ func (ts *ServerTest) AnthropicTestServer() *httptest.Server {
 
 		handlerCall, ok := ts.handlers[r.URL.Path]
 		if !ok {
-			
+			http.Error(w, "the resource path doesn't exist", http.StatusNotFound)
+			return
+		}
+		handlerCall(w, r)
+	}))
+}

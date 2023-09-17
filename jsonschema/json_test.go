@@ -11,4 +11,10 @@ import (
 func TestDefinition_MarshalJSON(t *testing.T) {
 	tests := []struct {
 		name string
-		def
+		def  jsonschema.Definition
+		want string
+	}{
+		{
+			name: "Test with empty Definition",
+			def:  jsonschema.Definition{},
+			want: `{"propertie

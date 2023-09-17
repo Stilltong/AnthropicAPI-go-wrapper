@@ -32,4 +32,11 @@ func (ts *ServerTest) AnthropicTestServer() *httptest.Server {
 		log.Printf("received request at path %q\n", r.URL.Path)
 
 		// check auth
-		if r.Header.Get("X-Api-Ke
+		if r.Header.Get("X-Api-Key") != GetTestToken() {
+			w.WriteHeader(http.StatusUnauthorized)
+			return
+		}
+
+		handlerCall, ok := ts.handlers[r.URL.Path]
+		if !ok {
+			

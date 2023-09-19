@@ -22,4 +22,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 		{
 			name: "Test with Definition properties set",
 			def: jsonschema.Definition{
-				Type:        jsonschema.
+				Type:        jsonschema.String,
+				Description: "A string type",
+				Properties: map[string]jsonschema.Definition{
+					"name": {
+						Type: jsonschema.String,
+					}

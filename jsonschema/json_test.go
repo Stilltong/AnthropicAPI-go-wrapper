@@ -17,4 +17,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 		{
 			name: "Test with empty Definition",
 			def:  jsonschema.Definition{},
-			want: `{"propertie
+			want: `{"properties":{}}`,
+		},
+		{
+			name: "Test with Definition properties set",
+			def: jsonschema.Definition{
+				Type:        jsonschema.

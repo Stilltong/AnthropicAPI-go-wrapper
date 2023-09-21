@@ -27,4 +27,12 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 				Properties: map[string]jsonschema.Definition{
 					"name": {
 						Type: jsonschema.String,
-					}
+					},
+				},
+			},
+			want: `{
+   "type":"string",
+   "description":"A string type",
+   "properties":{
+      "name":{
+         "type":"stri

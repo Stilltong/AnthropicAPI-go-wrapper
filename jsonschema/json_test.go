@@ -53,4 +53,15 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 								Type: jsonschema.String,
 							},
 							"age": {
-								Type: jsonschema.Integ
+								Type: jsonschema.Integer,
+							},
+						},
+					},
+				},
+			},
+			want: `{
+   "type":"object",
+   "properties":{
+      "user":{
+         "type":"object",
+         "propert

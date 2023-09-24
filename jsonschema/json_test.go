@@ -43,4 +43,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 		},
 		{
 			name: "Test with nested Definition properties",
-			def: jsonschema.Definit
+			def: jsonschema.Definition{
+				Type: jsonschema.Object,
+				Properties: map[string]jsonschema.Definition{
+					"user": {
+						Type: jsonschema.Object,
+						Properties: map[strin

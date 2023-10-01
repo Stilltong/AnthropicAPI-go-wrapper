@@ -70,4 +70,13 @@ func TestDefinition_MarshalJSON(t *testing.T) {
                "properties":{}
             },
             "age":{
-               
+               "type":"integer",
+               "properties":{}
+            }
+         }
+      }
+   }
+}`,
+		},
+		{
+			name: "Test with complex nest

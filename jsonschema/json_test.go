@@ -79,4 +79,8 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 }`,
 		},
 		{
-			name: "Test with complex nest
+			name: "Test with complex nested Definition",
+			def: jsonschema.Definition{
+				Type: jsonschema.Object,
+				Properties: map[string]jsonschema.Definition{
+					"user": {

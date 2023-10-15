@@ -98,4 +98,13 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 									"city": {
 										Type: jsonschema.String,
 									},
-						
+									"country": {
+										Type: jsonschema.String,
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+			wan

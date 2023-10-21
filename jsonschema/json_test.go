@@ -107,4 +107,10 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 					},
 				},
 			},
-			wan
+			want: `{
+   "type":"object",
+   "properties":{
+      "user":{
+         "type":"object",
+         "properties":{
+            "name"

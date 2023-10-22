@@ -113,4 +113,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
       "user":{
          "type":"object",
          "properties":{
-            "name"
+            "name":{
+               "type":"string",
+               "properties":{}
+            },
+            "age":{
+           

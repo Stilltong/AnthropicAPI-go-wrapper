@@ -118,4 +118,8 @@ func TestDefinition_MarshalJSON(t *testing.T) {
                "properties":{}
             },
             "age":{
-           
+               "type":"integer",
+               "properties":{}
+            },
+            "address":{
+               "type":"object

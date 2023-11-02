@@ -122,4 +122,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
                "properties":{}
             },
             "address":{
-               "type":"object
+               "type":"object",
+               "properties":{
+                  "city":{
+                     "type":"string",
+                     "properties":{}
+      

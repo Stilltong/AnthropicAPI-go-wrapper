@@ -131,4 +131,14 @@ func TestDefinition_MarshalJSON(t *testing.T) {
                   "country":{
                      "type":"string",
                      "properties":{}
-                 
+                  }
+               }
+            }
+         }
+      }
+   }
+}`,
+		},
+		{
+			name: "Test with Array type Definition",
+	

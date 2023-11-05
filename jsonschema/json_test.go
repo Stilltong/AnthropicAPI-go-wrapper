@@ -155,4 +155,12 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 			want: `{
    "type":"array",
    "items":{
-      "typ
+      "type":"string",
+      "properties":{
+         
+      }
+   },
+   "properties":{
+      "name":{
+         "type":"string",
+      

@@ -141,4 +141,9 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 		},
 		{
 			name: "Test with Array type Definition",
-	
+			def: jsonschema.Definition{
+				Type: jsonschema.Array,
+				Items: &jsonschema.Definition{
+					Type: jsonschema.String,
+				},
+				Properties: map[str

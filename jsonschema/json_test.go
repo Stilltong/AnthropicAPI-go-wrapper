@@ -163,4 +163,14 @@ func TestDefinition_MarshalJSON(t *testing.T) {
    "properties":{
       "name":{
          "type":"string",
-      
+         "properties":{}
+      }
+   }
+}`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			wantBytes := []byte(tt.want)
+			va

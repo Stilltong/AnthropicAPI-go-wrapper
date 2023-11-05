@@ -173,4 +173,7 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			wantBytes := []byte(tt.want)
-			va
+			var want map[string]interface{}
+			err := json.Unmarshal(wantBytes, &want)
+			if err != nil {
+				t.Errorf("Failed to Unmarshal JSO

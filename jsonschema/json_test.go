@@ -176,4 +176,11 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 			var want map[string]interface{}
 			err := json.Unmarshal(wantBytes, &want)
 			if err != nil {
-				t.Errorf("Failed to Unmarshal JSO
+				t.Errorf("Failed to Unmarshal JSON: error = %v", err)
+				return
+			}
+
+			got := structToMap(t, tt.def)
+			gotPtr := structToMap(t, &tt.def)
+
+			if !reflect.DeepEqual

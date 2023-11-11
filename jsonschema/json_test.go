@@ -183,4 +183,8 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 			got := structToMap(t, tt.def)
 			gotPtr := structToMap(t, &tt.def)
 
-			if !reflect.DeepEqual
+			if !reflect.DeepEqual(got, want) {
+				t.Errorf("MarshalJSON() got = %v, want %v", got, want)
+			}
+			if !reflect.DeepEqual(gotPtr, want) {
+				t.Errorf("Mars

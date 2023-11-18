@@ -187,4 +187,12 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 				t.Errorf("MarshalJSON() got = %v, want %v", got, want)
 			}
 			if !reflect.DeepEqual(gotPtr, want) {
-				t.Errorf("Mars
+				t.Errorf("MarshalJSON() gotPtr = %v, want %v", gotPtr, want)
+			}
+		})
+	}
+}
+
+func structToMap(t *testing.T, v any) map[string]any {
+	t.Helper()
+	gotBytes, er

@@ -195,4 +195,10 @@ func TestDefinition_MarshalJSON(t *testing.T) {
 
 func structToMap(t *testing.T, v any) map[string]any {
 	t.Helper()
-	gotBytes, er
+	gotBytes, err := json.Marshal(v)
+	if err != nil {
+		t.Errorf("Failed to Marshal JSON: error = %v", err)
+		return nil
+	}
+
+	var got map

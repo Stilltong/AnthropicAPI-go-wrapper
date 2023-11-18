@@ -201,4 +201,7 @@ func structToMap(t *testing.T, v any) map[string]any {
 		return nil
 	}
 
-	var got map
+	var got map[string]interface{}
+	err = json.Unmarshal(gotBytes, &got)
+	if err != nil {
+		t.Errorf("Failed to Unmarshal JSON: error =  %v", e

@@ -6,4 +6,8 @@ import (
 	"net/http"
 )
 
-type MessagesResponseType
+type MessagesResponseType string
+
+const (
+	MessagesResponseTypeMessage MessagesResponseType = "message"
+	MessagesResponseTypeError   Messag

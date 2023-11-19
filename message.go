@@ -10,4 +10,10 @@ type MessagesResponseType string
 
 const (
 	MessagesResponseTypeMessage MessagesResponseType = "message"
-	MessagesResponseTypeError   Messag
+	MessagesResponseTypeError   MessagesResponseType = "error"
+)
+
+type MessagesContentType string
+
+const (
+	MessagesContentTypeText           MessagesC

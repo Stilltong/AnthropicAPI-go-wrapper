@@ -16,4 +16,6 @@ const (
 type MessagesContentType string
 
 const (
-	MessagesContentTypeText           MessagesC
+	MessagesContentTypeText           MessagesContentType = "text"
+	MessagesContentTypeTextDelta      MessagesContentType = "text_delta"
+	MessagesContentTypeImage          Message

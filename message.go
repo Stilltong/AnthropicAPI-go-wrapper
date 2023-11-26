@@ -18,4 +18,6 @@ type MessagesContentType string
 const (
 	MessagesContentTypeText           MessagesContentType = "text"
 	MessagesContentTypeTextDelta      MessagesContentType = "text_delta"
-	MessagesContentTypeImage          Message
+	MessagesContentTypeImage          MessagesContentType = "image"
+	MessagesContentTypeToolResult     MessagesContentType = "tool_result"
+	MessagesContentTypeToolUse     

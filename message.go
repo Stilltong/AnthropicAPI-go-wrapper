@@ -20,4 +20,8 @@ const (
 	MessagesContentTypeTextDelta      MessagesContentType = "text_delta"
 	MessagesContentTypeImage          MessagesContentType = "image"
 	MessagesContentTypeToolResult     MessagesContentType = "tool_result"
-	MessagesContentTypeToolUse     
+	MessagesContentTypeToolUse        MessagesContentType = "tool_use"
+	MessagesContentTypeInputJsonDelta MessagesContentType = "input_json_delta"
+)
+
+type MessagesStopReason

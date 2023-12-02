@@ -24,4 +24,8 @@ const (
 	MessagesContentTypeInputJsonDelta MessagesContentType = "input_json_delta"
 )
 
-type MessagesStopReason
+type MessagesStopReason string
+
+const (
+	MessagesStopReasonEndTurn      MessagesStopReason = "end_turn"
+	MessagesStopReasonMaxTokens    MessagesStopReason = "max_tokens

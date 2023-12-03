@@ -39,4 +39,6 @@ type MessagesRequest struct {
 	MaxTokens int       `json:"max_tokens"`
 
 	System        string           `json:"system,omitempty"`
-	Metadata      map[string]any   `json:"metadata
+	Metadata      map[string]any   `json:"metadata,omitempty"`
+	StopSequences []string         `json:"stop_sequences,omitempty"`
+	Stream        bool             `json:"stream,

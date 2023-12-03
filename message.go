@@ -28,4 +28,6 @@ type MessagesStopReason string
 
 const (
 	MessagesStopReasonEndTurn      MessagesStopReason = "end_turn"
-	MessagesStopReasonMaxTokens    MessagesStopReason = "max_tokens
+	MessagesStopReasonMaxTokens    MessagesStopReason = "max_tokens"
+	MessagesStopReasonStopSequence MessagesStopReason = "stop_sequence"
+	MessagesStopReasonToolUse      MessagesStopReason = "too

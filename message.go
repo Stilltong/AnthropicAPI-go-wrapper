@@ -41,4 +41,6 @@ type MessagesRequest struct {
 	System        string           `json:"system,omitempty"`
 	Metadata      map[string]any   `json:"metadata,omitempty"`
 	StopSequences []string         `json:"stop_sequences,omitempty"`
-	Stream        bool             `json:"stream,
+	Stream        bool             `json:"stream,omitempty"`
+	Temperature   *float32         `json:"temperature,omitempty"`
+	TopP          *float32         `json:"

@@ -30,4 +30,10 @@ const (
 	MessagesStopReasonEndTurn      MessagesStopReason = "end_turn"
 	MessagesStopReasonMaxTokens    MessagesStopReason = "max_tokens"
 	MessagesStopReasonStopSequence MessagesStopReason = "stop_sequence"
-	MessagesStopReasonToolUse      MessagesStopReason = "too
+	MessagesStopReasonToolUse      MessagesStopReason = "tool_use"
+)
+
+type MessagesRequest struct {
+	Model     string    `json:"model"`
+	Messages  []Message `json:"messages"`
+	MaxTokens int       `js

@@ -43,4 +43,7 @@ type MessagesRequest struct {
 	StopSequences []string         `json:"stop_sequences,omitempty"`
 	Stream        bool             `json:"stream,omitempty"`
 	Temperature   *float32         `json:"temperature,omitempty"`
-	TopP          *float32         `json:"
+	TopP          *float32         `json:"top_p,omitempty"`
+	TopK          *int             `json:"top_k,omitempty"`
+	Tools         []ToolDefinition `json:"tools,omitempty"`
+	ToolChoice

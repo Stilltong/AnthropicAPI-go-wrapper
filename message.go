@@ -46,4 +46,8 @@ type MessagesRequest struct {
 	TopP          *float32         `json:"top_p,omitempty"`
 	TopK          *int             `json:"top_k,omitempty"`
 	Tools         []ToolDefinition `json:"tools,omitempty"`
-	ToolChoice
+	ToolChoice    *ToolChoice      `json:"tool_choice,omitempty"`
+}
+
+func (m *MessagesRequest) SetTemperature(t float32) {
+	m.Temperature 

@@ -50,4 +50,12 @@ type MessagesRequest struct {
 }
 
 func (m *MessagesRequest) SetTemperature(t float32) {
-	m.Temperature 
+	m.Temperature = &t
+}
+
+func (m *MessagesRequest) SetTopP(p float32) {
+	m.TopP = &p
+}
+
+func (m *MessagesRequest) SetTopK(k int) {
+	m.TopK =

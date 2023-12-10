@@ -66,4 +66,11 @@ type Message struct {
 	Content []MessageContent `json:"content"`
 }
 
-func NewUserTextMessage(text string) Mess
+func NewUserTextMessage(text string) Message {
+	return Message{
+		Role:    RoleUser,
+		Content: []MessageContent{NewTextMessageContent(text)},
+	}
+}
+
+func NewAssistantTextMess

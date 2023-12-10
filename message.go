@@ -58,4 +58,12 @@ func (m *MessagesRequest) SetTopP(p float32) {
 }
 
 func (m *MessagesRequest) SetTopK(k int) {
-	m.TopK =
+	m.TopK = &k
+}
+
+type Message struct {
+	Role    string           `json:"role"`
+	Content []MessageContent `json:"content"`
+}
+
+func NewUserTextMessage(text string) Mess

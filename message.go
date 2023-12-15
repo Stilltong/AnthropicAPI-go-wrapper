@@ -73,4 +73,7 @@ func NewUserTextMessage(text string) Message {
 	}
 }
 
-func NewAssistantTextMess
+func NewAssistantTextMessage(text string) Message {
+	return Message{
+		Role:    RoleAssistant,
+		Content: []MessageContent{NewTe

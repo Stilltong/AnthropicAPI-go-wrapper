@@ -76,4 +76,10 @@ func NewUserTextMessage(text string) Message {
 func NewAssistantTextMessage(text string) Message {
 	return Message{
 		Role:    RoleAssistant,
-		Content: []MessageContent{NewTe
+		Content: []MessageContent{NewTextMessageContent(text)},
+	}
+}
+
+func NewToolResultsMessage(toolUseID, content string, isError bool) Message {
+	return Message{
+		Rol

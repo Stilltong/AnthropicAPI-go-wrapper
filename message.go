@@ -82,4 +82,9 @@ func NewAssistantTextMessage(text string) Message {
 
 func NewToolResultsMessage(toolUseID, content string, isError bool) Message {
 	return Message{
-		Rol
+		Role:    RoleUser,
+		Content: []MessageContent{NewToolResultMessageContent(toolUseID, content, isError)},
+	}
+}
+
+func (m Message) GetFirstCont

@@ -87,4 +87,12 @@ func NewToolResultsMessage(toolUseID, content string, isError bool) Message {
 	}
 }
 
-func (m Message) GetFirstCont
+func (m Message) GetFirstContent() MessageContent {
+	if len(m.Content) == 0 {
+		return MessageContent{}
+	}
+	return m.Content[0]
+}
+
+type MessageContent struct {
+	Type Messag

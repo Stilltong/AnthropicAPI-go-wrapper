@@ -95,4 +95,10 @@ func (m Message) GetFirstContent() MessageContent {
 }
 
 type MessageContent struct {
-	Type Messag
+	Type MessagesContentType `json:"type"`
+
+	Text *string `json:"text,omitempty"`
+
+	Source *MessageContentImageSource `json:"source,omitempty"`
+
+	*MessageCon

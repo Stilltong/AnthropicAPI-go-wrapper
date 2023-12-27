@@ -101,4 +101,11 @@ type MessageContent struct {
 
 	Source *MessageContentImageSource `json:"source,omitempty"`
 
-	*MessageCon
+	*MessageContentToolResult
+
+	*MessageContentToolUse
+
+	PartialJson *string `json:"partial_json,omitempty"`
+}
+
+func NewTextMessageContent(text string) Mes

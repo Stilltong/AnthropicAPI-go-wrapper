@@ -122,4 +122,6 @@ func NewImageMessageContent(source MessageContentImageSource) MessageContent {
 	}
 }
 
-func
+func NewToolResultMessageContent(toolUseID, content string, isError bool) MessageContent {
+	return MessageContent{
+		Type:   

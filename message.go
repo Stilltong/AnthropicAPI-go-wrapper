@@ -108,4 +108,11 @@ type MessageContent struct {
 	PartialJson *string `json:"partial_json,omitempty"`
 }
 
-func NewTextMessageContent(text string) Mes
+func NewTextMessageContent(text string) MessageContent {
+	return MessageContent{
+		Type: MessagesContentTypeText,
+		Text: &text,
+	}
+}
+
+func NewImageMessageConte

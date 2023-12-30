@@ -115,4 +115,11 @@ func NewTextMessageContent(text string) MessageContent {
 	}
 }
 
-func NewImageMessageConte
+func NewImageMessageContent(source MessageContentImageSource) MessageContent {
+	return MessageContent{
+		Type:   MessagesContentTypeImage,
+		Source: &source,
+	}
+}
+
+func

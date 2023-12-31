@@ -147,4 +147,12 @@ func (m *MessageContent) GetText() string {
 	return ""
 }
 
-func (m *Messa
+func (m *MessageContent) ConcatText(s string) {
+	if m.Text == nil {
+		m.Text = &s
+	} else {
+		*m.Text += s
+	}
+}
+
+func (m *MessageContent) MergeConte

@@ -136,4 +136,15 @@ func NewToolUseMessageContent(toolUseID, name string, input json.RawMessage) Mes
 			ID:    toolUseID,
 			Name:  name,
 			Input: input,
-		}
+		},
+	}
+}
+
+func (m *MessageContent) GetText() string {
+	if m.Text != nil {
+		return *m.Text
+	}
+	return ""
+}
+
+func (m *Messa

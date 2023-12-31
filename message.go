@@ -131,4 +131,9 @@ func NewToolResultMessageContent(toolUseID, content string, isError bool) Messag
 
 func NewToolUseMessageContent(toolUseID, name string, input json.RawMessage) MessageContent {
 	return MessageContent{
-		Type: Messag
+		Type: MessagesContentTypeToolUse,
+		MessageContentToolUse: &MessageContentToolUse{
+			ID:    toolUseID,
+			Name:  name,
+			Input: input,
+		}

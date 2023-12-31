@@ -124,4 +124,5 @@ func NewImageMessageContent(source MessageContentImageSource) MessageContent {
 
 func NewToolResultMessageContent(toolUseID, content string, isError bool) MessageContent {
 	return MessageContent{
-		Type:   
+		Type:                     MessagesContentTypeToolResult,
+		MessageContentToolResult: NewMessageContentToolResult(toolUseID, content, i

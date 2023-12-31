@@ -125,4 +125,10 @@ func NewImageMessageContent(source MessageContentImageSource) MessageContent {
 func NewToolResultMessageContent(toolUseID, content string, isError bool) MessageContent {
 	return MessageContent{
 		Type:                     MessagesContentTypeToolResult,
-		MessageContentToolResult: NewMessageContentToolResult(toolUseID, content, i
+		MessageContentToolResult: NewMessageContentToolResult(toolUseID, content, isError),
+	}
+}
+
+func NewToolUseMessageContent(toolUseID, name string, input json.RawMessage) MessageContent {
+	return MessageContent{
+		Type: Messag

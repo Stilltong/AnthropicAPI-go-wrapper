@@ -159,4 +159,8 @@ func (m *MessageContent) MergeContentDelta(mc MessageContent) {
 	switch mc.Type {
 	case MessagesContentTypeText:
 		m.ConcatText(mc.GetText())
-	case MessagesContentTypeTex
+	case MessagesContentTypeTextDelta:
+		m.ConcatText(mc.GetText())
+	case MessagesContentTypeImage:
+		m.Source = mc.Source
+	case MessagesConten

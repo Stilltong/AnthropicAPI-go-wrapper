@@ -155,4 +155,8 @@ func (m *MessageContent) ConcatText(s string) {
 	}
 }
 
-func (m *MessageContent) MergeConte
+func (m *MessageContent) MergeContentDelta(mc MessageContent) {
+	switch mc.Type {
+	case MessagesContentTypeText:
+		m.ConcatText(mc.GetText())
+	case MessagesContentTypeTex

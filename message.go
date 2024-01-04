@@ -166,4 +166,8 @@ func (m *MessageContent) MergeContentDelta(mc MessageContent) {
 	case MessagesContentTypeToolResult:
 		m.MessageContentToolResult = mc.MessageContentToolResult
 	case MessagesContentTypeToolUse:
-		m.MessageContentToolUse = &MessageContentTo
+		m.MessageContentToolUse = &MessageContentToolUse{
+			ID:   mc.MessageContentToolUse.ID,
+			Name: mc.MessageContentToolUse.Name,
+		}
+	case MessagesContentTypeInpu

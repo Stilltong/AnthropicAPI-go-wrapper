@@ -170,4 +170,13 @@ func (m *MessageContent) MergeContentDelta(mc MessageContent) {
 			ID:   mc.MessageContentToolUse.ID,
 			Name: mc.MessageContentToolUse.Name,
 		}
-	case MessagesContentTypeInpu
+	case MessagesContentTypeInputJsonDelta:
+		if m.PartialJson == nil {
+			m.PartialJson = mc.PartialJson
+		} else {
+			*m.PartialJson += *mc.PartialJson
+		}
+	}
+}
+
+type MessageCon

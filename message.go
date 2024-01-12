@@ -185,4 +185,9 @@ type MessageContentToolResult struct {
 	IsError   *bool            `json:"is_error,omitempty"`
 }
 
-func NewMessageContentToolResult(toolUseID, content string, isError bool) *
+func NewMessageContentToolResult(toolUseID, content string, isError bool) *MessageContentToolResult {
+	return &MessageContentToolResult{
+		ToolUseID: &toolUseID,
+		Content: []MessageContent{
+			{
+	

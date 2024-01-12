@@ -181,4 +181,8 @@ func (m *MessageContent) MergeContentDelta(mc MessageContent) {
 
 type MessageContentToolResult struct {
 	ToolUseID *string          `json:"tool_use_id,omitempty"`
-	Content   []MessageContent `json:"content,omitempty"
+	Content   []MessageContent `json:"content,omitempty"`
+	IsError   *bool            `json:"is_error,omitempty"`
+}
+
+func NewMessageContentToolResult(toolUseID, content string, isError bool) *

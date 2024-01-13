@@ -199,4 +199,9 @@ func NewMessageContentToolResult(toolUseID, content string, isError bool) *Messa
 }
 
 type MessageContentImageSource struct {
-	Ty
+	Type      string `json:"type"`
+	MediaType string `json:"media_type"`
+	Data      any    `json:"data"`
+}
+
+type MessageContentToolUse

@@ -190,4 +190,13 @@ func NewMessageContentToolResult(toolUseID, content string, isError bool) *Messa
 		ToolUseID: &toolUseID,
 		Content: []MessageContent{
 			{
-	
+				Type: MessagesContentTypeText,
+				Text: &content,
+			},
+		},
+		IsError: &isError,
+	}
+}
+
+type MessageContentImageSource struct {
+	Ty

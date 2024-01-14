@@ -207,4 +207,11 @@ type MessageContentImageSource struct {
 type MessageContentToolUse struct {
 	ID    string          `json:"id,omitempty"`
 	Name  string          `json:"name,omitempty"`
-	Input json.RawMessage `json:"input,
+	Input json.RawMessage `json:"input,omitempty"`
+}
+
+func (c *MessageContentToolUse) UnmarshalInput(v any) error {
+	return json.Unmarshal(c.Input, v)
+}
+
+type MessagesResponse

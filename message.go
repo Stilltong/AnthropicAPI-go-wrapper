@@ -214,4 +214,9 @@ func (c *MessageContentToolUse) UnmarshalInput(v any) error {
 	return json.Unmarshal(c.Input, v)
 }
 
-type MessagesResponse
+type MessagesResponse struct {
+	httpHeader
+
+	ID           string               `json:"id"`
+	Type         MessagesResponseType `json:"type"`
+	Role     

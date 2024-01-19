@@ -219,4 +219,6 @@ type MessagesResponse struct {
 
 	ID           string               `json:"id"`
 	Type         MessagesResponseType `json:"type"`
-	Role     
+	Role         string               `json:"role"`
+	Content      []MessageContent     `json:"content"`
+	Model        string               `jso

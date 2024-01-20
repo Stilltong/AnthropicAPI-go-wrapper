@@ -221,4 +221,7 @@ type MessagesResponse struct {
 	Type         MessagesResponseType `json:"type"`
 	Role         string               `json:"role"`
 	Content      []MessageContent     `json:"content"`
-	Model        string               `jso
+	Model        string               `json:"model"`
+	StopReason   MessagesStopReason   `json:"stop_reason"`
+	StopSequence string               `json:"stop_sequence"`
+	Usage        Mess

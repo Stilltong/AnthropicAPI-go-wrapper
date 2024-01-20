@@ -224,4 +224,8 @@ type MessagesResponse struct {
 	Model        string               `json:"model"`
 	StopReason   MessagesStopReason   `json:"stop_reason"`
 	StopSequence string               `json:"stop_sequence"`
-	Usage        Mess
+	Usage        MessagesUsage        `json:"usage"`
+}
+
+// GetFirstContentText get Content[0].Text avoid panic
+func (m MessagesResponse) GetFirstContentText() stri

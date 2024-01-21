@@ -242,4 +242,6 @@ type MessagesUsage struct {
 
 type ToolDefinition struct {
 	Name        string `json:"name"`
-	Description
+	Description string `json:"description,omitempty"`
+	// InputSchema is an object describing the tool.
+	// You can pass json.RawMessage to de

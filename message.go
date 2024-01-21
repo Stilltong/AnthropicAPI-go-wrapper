@@ -236,4 +236,10 @@ func (m MessagesResponse) GetFirstContentText() string {
 }
 
 type MessagesUsage struct {
-	InputTokens  int `json:"input_
+	InputTokens  int `json:"input_tokens"`
+	OutputTokens int `json:"output_tokens"`
+}
+
+type ToolDefinition struct {
+	Name        string `json:"name"`
+	Description

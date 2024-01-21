@@ -228,4 +228,12 @@ type MessagesResponse struct {
 }
 
 // GetFirstContentText get Content[0].Text avoid panic
-func (m MessagesResponse) GetFirstContentText() stri
+func (m MessagesResponse) GetFirstContentText() string {
+	if len(m.Content) == 0 {
+		return ""
+	}
+	return m.Content[0].GetText()
+}
+
+type MessagesUsage struct {
+	InputTokens  int `json:"input_

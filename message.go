@@ -246,4 +246,6 @@ type ToolDefinition struct {
 	// InputSchema is an object describing the tool.
 	// You can pass json.RawMessage to describe the schema,
 	// or you can pass in a struct which serializes to the proper JSON schema.
-	// The jsonschema package is provided for convenience, b
+	// The jsonschema package is provided for convenience, but you should
+	// consider another specialized library if you require more complex schemas.
+	InputSchema any `json:"input_schema"`

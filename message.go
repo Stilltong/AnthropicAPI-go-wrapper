@@ -249,3 +249,12 @@ type ToolDefinition struct {
 	// The jsonschema package is provided for convenience, but you should
 	// consider another specialized library if you require more complex schemas.
 	InputSchema any `json:"input_schema"`
+}
+
+type ToolChoice struct {
+	// oneof: auto(default) any tool
+	Type string `json:"type"`
+	Name string `json:"name,omitempty"`
+}
+
+func (c *Client)

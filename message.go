@@ -257,4 +257,7 @@ type ToolChoice struct {
 	Name string `json:"name,omitempty"`
 }
 
-func (c *Client)
+func (c *Client) CreateMessages(ctx context.Context, request MessagesRequest) (response MessagesResponse, err error) {
+	request.Stream = false
+
+	var setters []requestSett

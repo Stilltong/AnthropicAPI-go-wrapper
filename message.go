@@ -260,4 +260,10 @@ type ToolChoice struct {
 func (c *Client) CreateMessages(ctx context.Context, request MessagesRequest) (response MessagesResponse, err error) {
 	request.Stream = false
 
-	var setters []requestSett
+	var setters []requestSetter
+	if len(request.Tools) > 0 {
+		setters = append(setters, withBetaVersion(c.config.BetaVersion))
+	}
+
+	urlSuffix := "/messages"
+	req, e

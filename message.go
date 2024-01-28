@@ -271,4 +271,6 @@ func (c *Client) CreateMessages(ctx context.Context, request MessagesRequest) (r
 		return
 	}
 
-	err = c.sendRequest(req, &response
+	err = c.sendRequest(req, &response)
+	return
+}

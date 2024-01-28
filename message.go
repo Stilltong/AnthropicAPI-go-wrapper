@@ -266,4 +266,9 @@ func (c *Client) CreateMessages(ctx context.Context, request MessagesRequest) (r
 	}
 
 	urlSuffix := "/messages"
-	req, e
+	req, err := c.newRequest(ctx, http.MethodPost, urlSuffix, request, setters...)
+	if err != nil {
+		return
+	}
+
+	err = c.sendRequest(req, &response

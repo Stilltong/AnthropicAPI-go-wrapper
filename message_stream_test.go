@@ -283,3 +283,21 @@ func handlerMessagesStreamToolUse(w http.ResponseWriter, r *http.Request) {
 	} else {
 		dataBytes = append(dataBytes, []byte("event: content_block_start\n")...)
 		dataBytes = append(dataBytes, []byte(`data: {"type":"content_block_start","index":0,"content_block":{"type":"tool_use","id":"toolu_019ktsPEWabjtYw1iGdjT2Qy","name":"get_weather","input":{}}}`+"\n\n")...)
+
+		for _, t := range testMessagesJsonDeltaContent {
+			dataBytes = append(dataBytes, []byte("event: content_block_delta\n")...)
+			dataBytes = append(dataBytes, []byte(fmt.Sprintf(`data: {"type":"content_block_delta","index":0,"delta":{"type":"input_json_delta","partial_json":"%s"}}`, t)+"\n\n")...)
+		}
+
+		dataBytes = append(dataBytes, []byte("event: content_block_stop\n")...)
+		dataBytes = append(dataBytes, []byte(`data: {"type":"content_block_stop","index":0}`+"\n\n")...)
+
+		dataBytes = append(dataBytes, []byte("event: message_delta\n")...)
+		dataBytes = append(dataBytes, []byte(`data: {"type":"message_delta","delta":{"stop_reason":"tool_use","stop_sequence":null},"usage":{"output_tokens":9}}`+"\n\n")...)
+	}
+
+	dataBytes = append(dataBytes, []byte("event: message_stop\n")...)
+	dataBytes = append(dataBytes, []byte(`data: {"type":"message_stop"}`+"\n\n")...)
+
+	_, _ = w.Write(dataBytes)
+}

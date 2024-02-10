@@ -18,4 +18,9 @@ import (
 	"github.com/liushuangls/go-anthropic/v2/jsonschema"
 )
 
-//go:embed i
+//go:embed internal/test/sources/*
+var sources embed.FS
+
+func TestMessages(t *testing.T) {
+	server := test.NewTestServer()
+	server.RegisterHandler("/v1/mes

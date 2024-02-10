@@ -14,4 +14,8 @@ import (
 
 	"github.com/liushuangls/go-anthropic/v2"
 	"github.com/liushuangls/go-anthropic/v2/internal/test"
-	"gith
+	"github.com/liushuangls/go-anthropic/v2/internal/test/checks"
+	"github.com/liushuangls/go-anthropic/v2/jsonschema"
+)
+
+//go:embed i

@@ -30,4 +30,8 @@ func TestMessages(t *testing.T) {
 	defer ts.Close()
 
 	baseUrl := ts.URL + "/v1"
-	client :=
+	client := anthropic.NewClient(
+		test.GetTestToken(),
+		anthropic.WithBaseURL(baseUrl),
+		anthropic.WithAPIVersion(anthropic.APIVersion20230601),
+		anthropi

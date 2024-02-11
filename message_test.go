@@ -23,4 +23,11 @@ var sources embed.FS
 
 func TestMessages(t *testing.T) {
 	server := test.NewTestServer()
-	server.RegisterHandler("/v1/mes
+	server.RegisterHandler("/v1/messages", handleMessagesEndpoint)
+
+	ts := server.AnthropicTestServer()
+	ts.Start()
+	defer ts.Close()
+
+	baseUrl := ts.URL + "/v1"
+	client :=

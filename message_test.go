@@ -34,4 +34,7 @@ func TestMessages(t *testing.T) {
 		test.GetTestToken(),
 		anthropic.WithBaseURL(baseUrl),
 		anthropic.WithAPIVersion(anthropic.APIVersion20230601),
-		anthropi
+		anthropic.WithEmptyMessagesLimit(100),
+		anthropic.WithHTTPClient(http.DefaultClient),
+	)
+	resp, err := client.CreateMessages(

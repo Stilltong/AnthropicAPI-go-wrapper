@@ -37,4 +37,7 @@ func TestMessages(t *testing.T) {
 		anthropic.WithEmptyMessagesLimit(100),
 		anthropic.WithHTTPClient(http.DefaultClient),
 	)
-	resp, err := client.CreateMessages(
+	resp, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
+		Model: anthropic.ModelClaudeInstant1Dot2,
+		Messages: []anthropic.Message{
+			anth

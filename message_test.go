@@ -45,4 +45,11 @@ func TestMessages(t *testing.T) {
 		MaxTokens: 1000,
 	})
 	if err != nil {
-		t.Fatalf("CreateMessages e
+		t.Fatalf("CreateMessages error: %v", err)
+	}
+
+	t.Logf("CreateMessages resp: %+v", resp)
+}
+
+func TestMessagesTokenError(t *testing.T) {
+	server := t

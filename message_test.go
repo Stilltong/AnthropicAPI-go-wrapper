@@ -40,4 +40,9 @@ func TestMessages(t *testing.T) {
 	resp, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
 		Model: anthropic.ModelClaudeInstant1Dot2,
 		Messages: []anthropic.Message{
-			anth
+			anthropic.NewUserTextMessage("What is your name?"),
+		},
+		MaxTokens: 1000,
+	})
+	if err != nil {
+		t.Fatalf("CreateMessages e

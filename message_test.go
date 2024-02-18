@@ -52,4 +52,8 @@ func TestMessages(t *testing.T) {
 }
 
 func TestMessagesTokenError(t *testing.T) {
-	server := t
+	server := test.NewTestServer()
+	server.RegisterHandler("/v1/messages", handleMessagesEndpoint)
+
+	ts := server.AnthropicTestServer()
+	ts.Start()

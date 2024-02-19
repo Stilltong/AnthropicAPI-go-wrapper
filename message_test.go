@@ -57,3 +57,9 @@ func TestMessagesTokenError(t *testing.T) {
 
 	ts := server.AnthropicTestServer()
 	ts.Start()
+	defer ts.Close()
+
+	baseUrl := ts.URL + "/v1"
+	client := anthropic.NewClient(
+		test.GetTestToken()+"1",
+		anthropic.Wi

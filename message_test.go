@@ -71,4 +71,11 @@ func TestMessagesTokenError(t *testing.T) {
 		},
 		MaxTokens: 1000,
 	})
-	ch
+	checks.HasError(t, err, "should error")
+
+	var e *anthropic.RequestError
+	if !errors.As(err, &e) {
+		t.Log("should request error")
+	}
+
+	t.Logf("

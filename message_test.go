@@ -65,4 +65,10 @@ func TestMessagesTokenError(t *testing.T) {
 		anthropic.WithBaseURL(baseUrl),
 	)
 	_, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
-		Model: anthropic.ModelClaudeIn
+		Model: anthropic.ModelClaudeInstant1Dot2,
+		Messages: []anthropic.Message{
+			anthropic.NewUserTextMessage("What is your name?"),
+		},
+		MaxTokens: 1000,
+	})
+	ch

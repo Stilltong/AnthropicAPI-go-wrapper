@@ -62,4 +62,7 @@ func TestMessagesTokenError(t *testing.T) {
 	baseUrl := ts.URL + "/v1"
 	client := anthropic.NewClient(
 		test.GetTestToken()+"1",
-		anthropic.Wi
+		anthropic.WithBaseURL(baseUrl),
+	)
+	_, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
+		Model: anthropic.ModelClaudeIn

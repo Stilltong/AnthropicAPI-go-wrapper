@@ -78,4 +78,9 @@ func TestMessagesTokenError(t *testing.T) {
 		t.Log("should request error")
 	}
 
-	t.Logf("
+	t.Logf("CreateMessages error: %s", err)
+}
+
+func TestMessagesVision(t *testing.T) {
+	server := test.NewTestServer()
+	server.RegisterHandler("/v1/message

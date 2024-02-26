@@ -83,4 +83,11 @@ func TestMessagesTokenError(t *testing.T) {
 
 func TestMessagesVision(t *testing.T) {
 	server := test.NewTestServer()
-	server.RegisterHandler("/v1/message
+	server.RegisterHandler("/v1/messages", handleMessagesEndpoint)
+
+	ts := server.AnthropicTestServer()
+	ts.Start()
+	defer ts.Close()
+
+	baseUrl := ts.URL + "/v1"
+	client := anthropic.NewCl

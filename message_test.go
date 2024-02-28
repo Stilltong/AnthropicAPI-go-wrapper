@@ -101,4 +101,10 @@ func TestMessagesVision(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	imageData, err := io.ReadAll(i
+	imageData, err := io.ReadAll(imageFile)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
+		Model: a

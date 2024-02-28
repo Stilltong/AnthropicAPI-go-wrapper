@@ -90,4 +90,10 @@ func TestMessagesVision(t *testing.T) {
 	defer ts.Close()
 
 	baseUrl := ts.URL + "/v1"
-	client := anthropic.NewCl
+	client := anthropic.NewClient(
+		test.GetTestToken(),
+		anthropic.WithBaseURL(baseUrl),
+	)
+
+	imagePath := "internal/test/sources/ant.jpg"
+	imageMediaTyp

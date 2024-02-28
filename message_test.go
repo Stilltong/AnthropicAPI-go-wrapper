@@ -96,4 +96,9 @@ func TestMessagesVision(t *testing.T) {
 	)
 
 	imagePath := "internal/test/sources/ant.jpg"
-	imageMediaTyp
+	imageMediaType := "image/jpeg"
+	imageFile, err := sources.Open(imagePath)
+	if err != nil {
+		t.Fatal(err)
+	}
+	imageData, err := io.ReadAll(i

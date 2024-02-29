@@ -111,4 +111,7 @@ func TestMessagesVision(t *testing.T) {
 		Messages: []anthropic.Message{
 			{
 				Role: anthropic.RoleUser,
-				Content: []anthropic.Messag
+				Content: []anthropic.MessageContent{
+					anthropic.NewImageMessageContent(anthropic.MessageContentImageSource{
+						Type:      "base64",
+						MediaType: im

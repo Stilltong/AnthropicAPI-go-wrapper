@@ -107,4 +107,8 @@ func TestMessagesVision(t *testing.T) {
 	}
 
 	resp, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{
-		Model: a
+		Model: anthropic.ModelClaude3Opus20240229,
+		Messages: []anthropic.Message{
+			{
+				Role: anthropic.RoleUser,
+				Content: []anthropic.Messag

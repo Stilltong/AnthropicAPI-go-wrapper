@@ -114,4 +114,11 @@ func TestMessagesVision(t *testing.T) {
 				Content: []anthropic.MessageContent{
 					anthropic.NewImageMessageContent(anthropic.MessageContentImageSource{
 						Type:      "base64",
-						MediaType: im
+						MediaType: imageMediaType,
+						Data:      imageData,
+					}),
+					anthropic.NewTextMessageContent("Describe this image."),
+				},
+			},
+		},
+		MaxTokens:

@@ -130,4 +130,9 @@ func TestMessagesVision(t *testing.T) {
 }
 
 func TestMessagesToolUse(t *testing.T) {
-	serv
+	server := test.NewTestServer()
+	server.RegisterHandler("/v1/messages", handleMessagesEndpoint)
+
+	ts := server.AnthropicTestServer()
+	ts.Start()
+	def

@@ -121,4 +121,13 @@ func TestMessagesVision(t *testing.T) {
 				},
 			},
 		},
-		MaxTokens:
+		MaxTokens: 1000,
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Logf("CreateMessages resp: %+v", resp)
+}
+
+func TestMessagesToolUse(t *testing.T) {
+	serv

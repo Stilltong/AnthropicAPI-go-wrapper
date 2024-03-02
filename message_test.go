@@ -146,4 +146,10 @@ func TestMessagesToolUse(t *testing.T) {
 	request := anthropic.MessagesRequest{
 		Model: anthropic.ModelClaude3Haiku20240307,
 		Messages: []anthropic.Message{
-			anthropic.NewUserTextMessage("What is the weather like 
+			anthropic.NewUserTextMessage("What is the weather like in San Francisco?"),
+		},
+		MaxTokens: 1000,
+		Tools: []anthropic.ToolDefinition{
+			{
+				Name:        "get_weather",
+				Descrip

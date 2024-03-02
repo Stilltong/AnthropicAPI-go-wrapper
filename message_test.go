@@ -152,4 +152,6 @@ func TestMessagesToolUse(t *testing.T) {
 		Tools: []anthropic.ToolDefinition{
 			{
 				Name:        "get_weather",
-				Descrip
+				Description: "Get the current weather in a given location",
+				InputSchema: jsonschema.Definition{
+					Type: jsonschema.Obje

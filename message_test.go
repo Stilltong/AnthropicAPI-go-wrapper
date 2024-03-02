@@ -143,4 +143,7 @@ func TestMessagesToolUse(t *testing.T) {
 		anthropic.WithBaseURL(baseUrl),
 	)
 
-	request := anthrop
+	request := anthropic.MessagesRequest{
+		Model: anthropic.ModelClaude3Haiku20240307,
+		Messages: []anthropic.Message{
+			anthropic.NewUserTextMessage("What is the weather like 

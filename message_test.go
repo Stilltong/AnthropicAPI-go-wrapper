@@ -135,4 +135,12 @@ func TestMessagesToolUse(t *testing.T) {
 
 	ts := server.AnthropicTestServer()
 	ts.Start()
-	def
+	defer ts.Close()
+
+	baseUrl := ts.URL + "/v1"
+	client := anthropic.NewClient(
+		test.GetTestToken(),
+		anthropic.WithBaseURL(baseUrl),
+	)
+
+	request := anthrop

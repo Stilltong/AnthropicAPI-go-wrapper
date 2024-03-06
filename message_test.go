@@ -158,4 +158,8 @@ func TestMessagesToolUse(t *testing.T) {
 					Properties: map[string]jsonschema.Definition{
 						"location": {
 							Type:        jsonschema.String,
-							Description: "The city and stat
+							Description: "The city and state, e.g. San Francisco, CA",
+						},
+						"unit": {
+							Type:        jsonschema.String,
+							Enum:        []string{"celsi

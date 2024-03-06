@@ -154,4 +154,8 @@ func TestMessagesToolUse(t *testing.T) {
 				Name:        "get_weather",
 				Description: "Get the current weather in a given location",
 				InputSchema: jsonschema.Definition{
-					Type: jsonschema.Obje
+					Type: jsonschema.Object,
+					Properties: map[string]jsonschema.Definition{
+						"location": {
+							Type:        jsonschema.String,
+							Description: "The city and stat

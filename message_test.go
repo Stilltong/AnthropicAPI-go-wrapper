@@ -173,4 +173,9 @@ func TestMessagesToolUse(t *testing.T) {
 	}
 
 	resp, err := client.CreateMessages(context.Background(), request)
-	if err != n
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	request.Messages = append(request.Messages, anthropic.Message{
+		Role:    anthropic.RoleAssist

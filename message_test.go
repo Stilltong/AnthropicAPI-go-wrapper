@@ -165,4 +165,12 @@ func TestMessagesToolUse(t *testing.T) {
 							Enum:        []string{"celsius", "fahrenheit"},
 							Description: "The unit of temperature, either 'celsius' or 'fahrenheit'",
 						},
-					}
+					},
+					Required: []string{"location"},
+				},
+			},
+		},
+	}
+
+	resp, err := client.CreateMessages(context.Background(), request)
+	if err != n

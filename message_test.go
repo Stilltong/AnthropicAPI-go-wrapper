@@ -162,4 +162,7 @@ func TestMessagesToolUse(t *testing.T) {
 						},
 						"unit": {
 							Type:        jsonschema.String,
-							Enum:        []string{"celsi
+							Enum:        []string{"celsius", "fahrenheit"},
+							Description: "The unit of temperature, either 'celsius' or 'fahrenheit'",
+						},
+					}

@@ -178,4 +178,11 @@ func TestMessagesToolUse(t *testing.T) {
 	}
 
 	request.Messages = append(request.Messages, anthropic.Message{
-		Role:    anthropic.RoleAssist
+		Role:    anthropic.RoleAssistant,
+		Content: resp.Content,
+	})
+
+	var toolUse *anthropic.MessageContentToolUse
+
+	for _, c := range resp.Content {
+		if c.

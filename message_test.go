@@ -189,4 +189,12 @@ func TestMessagesToolUse(t *testing.T) {
 			toolUse = c.MessageContentToolUse
 			t.Logf("ToolUse: %+v", toolUse)
 		} else {
-			t.Logf("Content: 
+			t.Logf("Content: %+v", c)
+		}
+	}
+
+	if toolUse == nil {
+		t.Fatal("tool use not found")
+	}
+
+	request.Messages = append(reques

@@ -197,4 +197,7 @@ func TestMessagesToolUse(t *testing.T) {
 		t.Fatal("tool use not found")
 	}
 
-	request.Messages = append(reques
+	request.Messages = append(request.Messages, anthropic.NewToolResultsMessage(toolUse.ID, "65 degrees", false))
+
+	resp, err = client.CreateMessages(context.Background(), request)
+	if err !

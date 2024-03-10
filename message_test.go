@@ -185,4 +185,8 @@ func TestMessagesToolUse(t *testing.T) {
 	var toolUse *anthropic.MessageContentToolUse
 
 	for _, c := range resp.Content {
-		if c.
+		if c.Type == anthropic.MessagesContentTypeToolUse {
+			toolUse = c.MessageContentToolUse
+			t.Logf("ToolUse: %+v", toolUse)
+		} else {
+			t.Logf("Content: 

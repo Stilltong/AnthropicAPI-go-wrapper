@@ -207,4 +207,9 @@ func TestMessagesToolUse(t *testing.T) {
 	t.Logf("CreateMessages resp: %+v", resp)
 
 	var hasDegrees bool
-	for _, m := range resp.Con
+	for _, m := range resp.Content {
+		if m.Type == anthropic.MessagesContentTypeText {
+			if strings.Contains(m.GetText(), "65 degrees") {
+				hasDegrees = true
+				break
+			}

@@ -200,4 +200,11 @@ func TestMessagesToolUse(t *testing.T) {
 	request.Messages = append(request.Messages, anthropic.NewToolResultsMessage(toolUse.ID, "65 degrees", false))
 
 	resp, err = client.CreateMessages(context.Background(), request)
-	if err !
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	t.Logf("CreateMessages resp: %+v", resp)
+
+	var hasDegrees bool
+	for _, m := range resp.Con

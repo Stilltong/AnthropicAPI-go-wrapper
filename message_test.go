@@ -225,4 +225,8 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	var resBytes []byte
 
 	// completions only accepts POST requests
-	if r.Method != 
+	if r.Method != "POST" {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	}
+
+	var messagesReq anthropic.MessagesRequest

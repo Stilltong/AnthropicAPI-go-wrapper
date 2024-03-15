@@ -220,4 +220,9 @@ func TestMessagesToolUse(t *testing.T) {
 	}
 }
 
-func handleMessagesEndpoint(w htt
+func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
+	var err error
+	var resBytes []byte
+
+	// completions only accepts POST requests
+	if r.Method != 

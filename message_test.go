@@ -230,3 +230,9 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var messagesReq anthropic.MessagesRequest
+	if messagesReq, err = getMessagesRequest(r); err != nil {
+		http.Error(w, "could not read request", http.StatusInternalServerError)
+		return
+	}
+
+	va

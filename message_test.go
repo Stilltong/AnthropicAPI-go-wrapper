@@ -213,3 +213,11 @@ func TestMessagesToolUse(t *testing.T) {
 				hasDegrees = true
 				break
 			}
+		}
+	}
+	if !hasDegrees {
+		t.Fatalf("Expected response to contain '65 degrees', got: %+v", resp.Content)
+	}
+}
+
+func handleMessagesEndpoint(w htt

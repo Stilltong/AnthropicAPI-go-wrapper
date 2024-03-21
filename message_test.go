@@ -239,4 +239,12 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 
 	for _, m := range messagesReq.Messages {
 		for _, c := range m.Content {
-			if c.Type == anthropic.Messa
+			if c.Type == anthropic.MessagesContentTypeToolResult {
+				hasToolResult = true
+				break
+			}
+		}
+	}
+
+	res := anthropic.MessagesResponse{
+		Type:

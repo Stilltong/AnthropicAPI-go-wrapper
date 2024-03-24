@@ -247,4 +247,8 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 
 	res := anthropic.MessagesResponse{
-		Type:
+		Type: "completion",
+		ID:   strconv.Itoa(int(time.Now().Unix())),
+		Role: anthropic.RoleAssistant,
+		Content: []anthropic.MessageContent{
+			an

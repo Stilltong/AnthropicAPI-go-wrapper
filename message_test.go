@@ -255,3 +255,10 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 		},
 		StopReason: anthropic.MessagesStopReasonEndTurn,
 		Model:      messagesReq.Model,
+		Usage: anthropic.MessagesUsage{
+			InputTokens:  10,
+			OutputTokens: 10,
+		},
+	}
+
+	if len(message

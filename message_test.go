@@ -251,4 +251,7 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 		ID:   strconv.Itoa(int(time.Now().Unix())),
 		Role: anthropic.RoleAssistant,
 		Content: []anthropic.MessageContent{
-			an
+			anthropic.NewTextMessageContent("hello"),
+		},
+		StopReason: anthropic.MessagesStopReasonEndTurn,
+		Model:      messagesReq.Model,

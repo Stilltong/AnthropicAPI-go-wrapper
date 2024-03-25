@@ -264,4 +264,4 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	if len(messagesReq.Tools) > 0 {
 		if hasToolResult {
 			res.Content = []anthropic.MessageContent{
-				anthropic.NewTextMessageContent("
+				anthropic.NewTextMessageContent("The current weather in San Francisco is 65 degrees Fahrenheit. It's a nice, moderate temperature typical of the San Francisco

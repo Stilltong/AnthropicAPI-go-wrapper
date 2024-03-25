@@ -261,4 +261,7 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 
-	if len(message
+	if len(messagesReq.Tools) > 0 {
+		if hasToolResult {
+			res.Content = []anthropic.MessageContent{
+				anthropic.NewTextMessageContent("

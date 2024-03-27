@@ -270,3 +270,7 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 			m := map[string]any{
 				"location": "San Francisco, CA",
 				"unit":     "celsius",
+			}
+			bs, _ := json.Marshal(m)
+			res.Content = []anthropic.MessageContent{
+				anthropic.NewTextMessageContent("Oka

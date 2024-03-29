@@ -285,4 +285,14 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 }
 
 func getMessagesRequest(r *http.Request) (req anthropic.MessagesRequest, err error) {
-	reqBody, err := io.ReadAll(r.B
+	reqBody, err := io.ReadAll(r.Body)
+	if err != nil {
+		return
+	}
+
+	err = json.Unmarshal(reqBody, &req)
+	if err != nil {
+		return
+	}
+	return
+}

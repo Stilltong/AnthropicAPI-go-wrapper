@@ -274,4 +274,11 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 			bs, _ := json.Marshal(m)
 			res.Content = []anthropic.MessageContent{
 				anthropic.NewTextMessageContent("Okay, let me check the weather in San Francisco:"),
-				anthropic.NewToolUseMessageContent("toolu_01Ex86JyJAe8RSbFRCTM3pQo", "get_weathe
+				anthropic.NewToolUseMessageContent("toolu_01Ex86JyJAe8RSbFRCTM3pQo", "get_weather", bs),
+			}
+			res.StopReason = anthropic.MessagesStopReasonToolUse
+		}
+	}
+
+	resBytes, _ = json.Marshal(res)
+	_, _ = w.Write(resByte

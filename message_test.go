@@ -281,4 +281,8 @@ func handleMessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 
 	resBytes, _ = json.Marshal(res)
-	_, _ = w.Write(resByte
+	_, _ = w.Write(resBytes)
+}
+
+func getMessagesRequest(r *http.Request) (req anthropic.MessagesRequest, err error) {
+	reqBody, err := io.ReadAll(r.B

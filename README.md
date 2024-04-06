@@ -5,4 +5,11 @@
 [![codecov](https://codecov.io/gh/Stilltong/AnthropicAPI-go-wrapper/graph/badge.svg?token=O6JSAOZORX)](https://codecov.io/gh/Stilltong/AnthropicAPI-go-wrapper)
 [![Sanity check](https://github.com/Stilltong/AnthropicAPI-go-wrapper/actions/workflows/pr.yml/badge.svg)](https://github.com/Stilltong/AnthropicAPI-go-wrapper/actions/workflows/pr.yml)
 
-This is an unof
+This is an unofficial Anthropics Claude API wrapper for Go. It supports:
+
+- Completions
+- Streaming Completions
+- Messages
+- Streaming Messages
+- Vision
+- T

@@ -12,4 +12,12 @@ This is an unofficial Anthropics Claude API wrapper for Go. It supports:
 - Messages
 - Streaming Messages
 - Vision
-- T
+- Tool use
+
+## Installation
+
+```
+go get github.com/Stilltong/AnthropicAPI-go-wrapper/v2
+```
+
+The AnthropicAPI-go-wrapper requires Go version 1.21 or gre

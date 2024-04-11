@@ -36,4 +36,18 @@ import (
 	"github.com/Stilltong/AnthropicAPI-go-wrapper/v2"
 )
 
-func
+func main() {	
+//.....your codes
+}
+```
+
+### Messages stream example usage:
+
+```go
+package main
+
+import (
+	"errors"
+	"fmt"
+
+	"github.c

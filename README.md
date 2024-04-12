@@ -61,4 +61,13 @@ func main() {
 ### Other examples:
 
 <details>
-<summary>Messa
+<summary>Messages Vision example</summary>
+
+```go
+package main
+
+import (
+	"errors"
+	"fmt"
+
+	"github.com/Stilltong/AnthropicAPI-go-wr

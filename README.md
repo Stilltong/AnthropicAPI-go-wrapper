@@ -50,4 +50,15 @@ import (
 	"errors"
 	"fmt"
 
-	"github.c
+	"github.com/Stilltong/AnthropicAPI-go-wrapper/v2"
+)
+
+func main() {
+//.....your codes
+}
+```
+
+### Other examples:
+
+<details>
+<summary>Messa

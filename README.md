@@ -102,4 +102,6 @@ func main() {
 </details>
 
 ## Acknowledgments
-The following project had partic
+The following project had particular influence on AnthropicAPI-go-wrapper's design.
+
+- [sashabaranov/go-openai](https://github.com/sashabaranov/go-openai)

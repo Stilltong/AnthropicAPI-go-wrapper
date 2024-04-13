@@ -81,4 +81,14 @@ func main() {
 
 <details>
 
-<summary>Messages Tool use example<
+<summary>Messages Tool use example</summary>
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/Stilltong/AnthropicAPI-go-wrapper/v2"
+	"github.com/Stilltong/Anth
